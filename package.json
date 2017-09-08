@@ -1,0 +1,23 @@
+{
+	"name": "ElectronIframe",
+	"version": "0.1.0",
+	"description": "Electron Application with iframe",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron ."
+	},
+	"homepage": "https://github.com/jegj/ElectronIframe",
+	"repository": "https://github.com/jegj/ElectronIframe",
+	"keywords": [
+		"Electron",
+		"Iframe"
+	],
+	"author": {
+		"name": "Javier Galarza",
+		"email": "jegj57@gmail.com"
+	},
+	"devDependencies": {
+		"electron": "1.7.5",
+		"electron-builder": "^19.27.7"
+	}
+}

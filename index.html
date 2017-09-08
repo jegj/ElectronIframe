@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ElectronIframe</title>
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/style.css">
+	</head>
+	<body  style="-webkit-app-region: drag">
+		<div class="material-wrap"  style="-webkit-app-region: drag">
+			<div class="material clearfix">
+				<div class="top-bar">
+					<div class="pull-left">
+						<a href="#" class="menu-tgl pull-left"><i class="fa fa-bars"></i></a>
+					</div>
+					<span class="title"><span class=""><img src="images/icon-128x128.png" width="20"/></span> Dashboard</span>
+					<div class="pull-right">
+						<a href="#" class="option-tgl pull-left" onclick="window.close()"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<div class="indicator">
+
+				</div>
+				<iframe onload="ready(this)" id="app" src="http://192.168.1.105:8585" style="display:inline-flex; width:100%; height:700px">
+				</iframe>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		function ready(){
+			console.log('ready');
+			const webview = document.querySelector('#app')
+			webview.contentWindow.postMessage('hello', '*');
+		}
+	</script>
+</html>
