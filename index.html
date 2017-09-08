@@ -27,10 +27,24 @@
 	</body>
 
 	<script>
+		const {ipcRenderer} = require('electron');
+
+		let jwt = null;
+		
+		ipcRenderer.on('JWT', function(event, arg) {
+			jwt = arg;
+		});
+
+
+		// document.addEventListener('DOMContentLoaded', () => {
+		// 	ipcRenderer.send('ready', {random: 1231231223});
+		// });
 		function ready(){
-			console.log('ready');
+			// console.log('ready');
 			const webview = document.querySelector('#app')
-			webview.contentWindow.postMessage('hello', '*');
+			//TODO: GET QUE MESSAGE
+			// webview.contentWindow.postMessage('hello', '*');
+			// webview.contentWindow.postMessage({code:'JWT', jwt: jwt}, '*');
 		}
 	</script>
 </html>

@@ -5,7 +5,7 @@
 	"main": "main.js",
 	"scripts": {
 		"dist:dev:deb64": "electron-builder --linux deb  --x64 --config build/build.dev.json",
-		"start": "electron ."
+		"start": "electron . --enable-logging"
 	},
 	"homepage": "https://github.com/jegj/ElectronIframe",
 	"repository": "https://github.com/jegj/ElectronIframe",
@@ -16,6 +16,9 @@
 	"author": {
 		"name": "Javier Galarza",
 		"email": "jegj57@gmail.com"
+	},
+	"dependencies" : {
+		"node-ipc": "^9.1.1"
 	},
 	"devDependencies": {
 		"electron": "1.7.5",

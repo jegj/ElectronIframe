@@ -1,5 +1,5 @@
 // Module to create native browser window.
-const {Menu, Tray, app, BrowserWindow} = require('electron')
+const {Menu, Tray, app, BrowserWindow, ipcMain} = require('electron')
 
 const path = require('path')
 const url = require('url')
@@ -80,7 +80,53 @@ function createWindow () {
 		// when you should delete the corresponding element.
 		mainWindow = null
 	});
+
+	let JWT;
+	
+	mainWindow.webContents.on('did-finish-load', () => {
+		// SOCKET CONNECTION
+		const ipc=require('node-ipc');
+		ipc.config.id   = 'dashboard';
+		ipc.config.retry= 1500;
+		ipc.connectTo( 'launcher', function(){
+			ipc.of.launcher.on(
+					'connect',
+					function(){
+						console.log('=====>connected');
+						// ipc.log('## connected to launcher ##'.rainbow, ipc.config.delay);
+						ipc.of.launcher.emit(
+							'jwt_request',
+						)
+					}
+			);
+			ipc.of.launcher.on(
+					'disconnect',
+					function(){
+							ipc.log('disconnected from launcher'.notice);
+					}
+			);
+			ipc.of.launcher.on(
+					'message',  //any event or message type your server listens for
+					function(data){
+							ipc.log('got a message from launcher : '.debug, data);
+					}
+			);
+			ipc.of.launcher.on(
+					'jwt_response',  //any event or message type your server listens for
+					(data) => {
+							ipc.log('got a JWT from launcher : '.debug, data);
+							console.log('got a JWT from launcher : ', data);
+							JWT = data;
+							mainWindow.webContents.send('JWT' , {JWT:JWT});
+					}
+			);
+		});
+		// mainWindow.webContents.send('JWT' , {'JWT':'JWT'});
+	})
+	
 }
+
+
 
 // const trayControl = new TrayControl(app, iconPath, template);
 
