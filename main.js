@@ -46,7 +46,7 @@ function createWindow () {
 	// Create the browser window.
 	mainWindow = new BrowserWindow(
 		{
-			width: 700, 
+			width: 1000, 
 			height: 700,
 			icon: path.join(__dirname, 'images/icons/icon-256x256.ico'), 
 			title: 'Dealerbuilt', frame: true

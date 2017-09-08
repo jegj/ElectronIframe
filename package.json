@@ -4,6 +4,7 @@
 	"description": "Electron Application with iframe",
 	"main": "main.js",
 	"scripts": {
+		"dist:dev:deb64": "electron-builder --linux deb  --x64 --config build/build.dev.json",
 		"start": "electron ."
 	},
 	"homepage": "https://github.com/jegj/ElectronIframe",

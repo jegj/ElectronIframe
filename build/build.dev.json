@@ -1,0 +1,9 @@
+{
+	"appId": "dealeworks.launcher",
+	"linux": {
+		"target": "deb",
+		"executableName": "ElectronIframe",
+		"icon": "images/icons/",
+		"category": "Utility"
+	}
+}
