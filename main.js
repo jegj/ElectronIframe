@@ -117,7 +117,7 @@ function createWindow () {
 							ipc.log('got a JWT from launcher : '.debug, data);
 							console.log('got a JWT from launcher : ', data);
 							JWT = data;
-							mainWindow.webContents.send('JWT' , {JWT:JWT});
+							mainWindow.webContents.send('JWT' , JWT);
 					}
 			);
 		});

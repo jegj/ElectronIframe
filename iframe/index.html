@@ -31,12 +31,17 @@
 	</body>
 	<script>
 		window.onmessage = function(e){
-			if (e.data == 'hello') {
-				alert('It works!');
+			// alert(e.data);
+			const data = JSON.parse(e.data);
+			if ( data.code === 'JWT') {
+				alert('It works! this is your JWT: ' + data.JWT);
 			}
-			if (e.data  && e.data.code == 'JWT') {
-				alert('It works! this my JWT: ' + e.data.jwt);
-			}
+			// if (e.data == 'hello') {
+			// 	alert('It works!');
+			// }
+			// if (e.data  && e.data.code == 'JWT') {
+			// 	alert('It works! this my JWT: ' + e.data.jwt);
+			// }
 		};
 	</script>
 </html>
