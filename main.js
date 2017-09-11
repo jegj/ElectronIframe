@@ -87,7 +87,7 @@ function createWindow () {
 		// SOCKET CONNECTION
 		const ipc=require('node-ipc');
 		ipc.config.id   = 'dashboard';
-		ipc.config.retry= 1500;
+		ipc.config.stopRetrying = 0;
 		ipc.connectTo( 'launcher', function(){
 			ipc.of.launcher.on(
 					'connect',
@@ -117,11 +117,11 @@ function createWindow () {
 							ipc.log('got a JWT from launcher : '.debug, data);
 							console.log('got a JWT from launcher : ', data);
 							JWT = data;
+							// SEND JWT TO RENDER PROCESS
 							mainWindow.webContents.send('JWT' , JWT);
 					}
 			);
 		});
-		// mainWindow.webContents.send('JWT' , {'JWT':'JWT'});
 	})
 	
 }

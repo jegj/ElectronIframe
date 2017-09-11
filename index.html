@@ -20,7 +20,7 @@
 				</div>
 				<div class="indicator">
 				</div>
-				<iframe onload="ready(this)" id="app" src="http://172.16.68.78:8585" style="display:inline-flex; width:100%; height:630px">
+				<iframe id="app" src="http://0.0.0.0:9000" style="display:inline-flex; width:100%; height:630px">
 				</iframe>
 			</div>
 		</div>
@@ -32,21 +32,8 @@
 		const webview = document.querySelector('#app')
 		ipcRenderer.on('JWT', function(event, arg) {
 			jwt = arg;
-			const msg = JSON.stringify({code:'JWT', JWT: jwt});
+			const msg = JSON.stringify({type: 'electron-pipe-auth', code:'JWT',  data: {JWT: jwt }});
 			webview.contentWindow.postMessage(msg, '*');
 		});
-
-
-		// document.addEventListener('DOMContentLoaded', () => {
-		// 	ipcRenderer.send('ready', {random: 1231231223});
-		// });
-		function ready(){
-			// console.log('ready');
-			
-			//TODO: GET QUE MESSAGE
-			// webview.contentWindow.postMessage('hello', '*');
-			// const msg = JSON.stringify({code:'JWT', jwt: jwt});
-			// webview.contentWindow.postMessage(msg, '*');
-		}
 	</script>
 </html>
