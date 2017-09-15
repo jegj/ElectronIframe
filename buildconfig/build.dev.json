@@ -5,5 +5,14 @@
 		"executableName": "ElectronIframe",
 		"icon": "images/icons/",
 		"category": "Utility"
+	},
+	"nsis":{
+		"oneClick": false,
+		"include": "build/installer.nsh",
+		"warningsAsErrors": false 
+	},
+	"win": {	
+		"target": "nsis",
+		"icon": "images/icons/icon-256x256.ico"
 	}
 }
