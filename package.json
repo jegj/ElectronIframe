@@ -4,6 +4,7 @@
 	"description": "Electron Application with iframe",
 	"main": "main.js",
 	"scripts": {
+		"dist:dev:win64": "electron-builder --win --x64 --config buildconfig/build.dev.json",
 		"dist:dev:deb64": "electron-builder --linux deb  --x64 --config buildconfig/build.dev.json",
 		"start": "electron . --enable-logging"
 	},
