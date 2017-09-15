@@ -1,0 +1,27 @@
+{
+	"name": "ElectronIframe",
+	"version": "0.1.0",
+	"description": "Electron Application with iframe",
+	"main": "main.js",
+	"scripts": {
+		"dist:dev:deb64": "electron-builder --linux deb  --x64 --config buildconfig/build.dev.json",
+		"start": "electron . --enable-logging"
+	},
+	"homepage": "https://github.com/jegj/ElectronIframe",
+	"repository": "https://github.com/jegj/ElectronIframe",
+	"keywords": [
+		"Electron",
+		"Iframe"
+	],
+	"author": {
+		"name": "Javier Galarza",
+		"email": "jegj57@gmail.com"
+	},
+	"dependencies" : {
+		"node-ipc": "^9.1.1"
+	},
+	"devDependencies": {
+		"electron": "1.7.5",
+		"electron-builder": "^19.27.7"
+	}
+}
