@@ -11,7 +11,7 @@ let mainWindow
 function createWindow () {
 	const template = [
 		{
-			label: 'DealerWorks',
+			label: 'DBDDash',
 			click: function () {
 				mainWindow.show();
 			}

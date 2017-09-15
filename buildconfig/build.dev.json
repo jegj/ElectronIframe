@@ -1,5 +1,5 @@
 {
-	"appId": "dealeworks.launcher",
+	"appId": "electron.iframe",
 	"linux": {
 		"target": "deb",
 		"executableName": "ElectronIframe",
@@ -7,7 +7,7 @@
 		"category": "Utility"
 	},
 	"nsis":{
-		"oneClick": false,
+		"oneClick": true,
 		"include": "build/installer.nsh",
 		"warningsAsErrors": false,
 		"runAfterFinish": false
