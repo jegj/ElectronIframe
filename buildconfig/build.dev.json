@@ -9,7 +9,8 @@
 	"nsis":{
 		"oneClick": false,
 		"include": "build/installer.nsh",
-		"warningsAsErrors": false 
+		"warningsAsErrors": false,
+		"runAfterFinish": false
 	},
 	"win": {	
 		"target": "nsis",
