@@ -38,11 +38,11 @@ function createWindow () {
 		}
 	];
 	// THIS COULD BE SMALL IMAGE
-	const iconPath = path.join(__dirname, '/images/icon-128x128.png');
-	const appIcon = new Tray(iconPath);
-	const contextMenu = Menu.buildFromTemplate(template);
-	appIcon.setToolTip('DealerworksLauncher');
-	appIcon.setContextMenu(contextMenu);
+	// const iconPath = path.join(__dirname, '/images/icon-128x128.png');
+	// const appIcon = new Tray(iconPath);
+	// const contextMenu = Menu.buildFromTemplate(template);
+	// appIcon.setToolTip('DealerworksLauncher');
+	// appIcon.setContextMenu(contextMenu);
 	// Create the browser window.
 	mainWindow = new BrowserWindow(
 		{
